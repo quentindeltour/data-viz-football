@@ -1,2 +1,2 @@
 # data-viz-football
-Dash app : dataviz of football Data
+Dataviz of football Data using Dash and data gathered on [this site](https://www.football-data.co.uk/)
