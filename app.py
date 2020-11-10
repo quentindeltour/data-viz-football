@@ -837,7 +837,7 @@ def toggle_collapse(n, is_open):
 )
 def get_club_list(path_csv):
     liste_csv = os.listdir(os.path.dirname(path_csv))
-    liste_df = [pd.read_csv(os.path.dirname(path_csv) + '/' + file, engine='python') for file in liste_csv]
+    liste_df = [pd.read_csv(os.path.dirname(path_csv) + '/' + file, engine='python', sep=',',error_bad_lines=False) for file in liste_csv]
     df = pd.concat(liste_df)
     df.dropna(subset=['HomeTeam', 'AwayTeam'],inplace=True)
     teams = list(set(pd.unique(df['AwayTeam']).tolist()+pd.unique(df['HomeTeam']).tolist()))
@@ -856,7 +856,7 @@ def get_club_list(path_csv):
 )
 def update_face_to_face_table(path_csv, club1, club2, *bugs):
     liste_csv = os.listdir(os.path.dirname(path_csv))
-    liste_df = [pd.read_csv(os.path.dirname(path_csv) + '/'+ file, engine='python') for file in liste_csv]
+    liste_df = [pd.read_csv(os.path.dirname(path_csv) + '/'+ file, engine='python', sep=',',error_bad_lines=False) for file in liste_csv]
     full_df = pd.concat(liste_df)
     df = full_df[((full_df.HomeTeam==club1)&(full_df.AwayTeam==club2))|((full_df.HomeTeam==club2)&(full_df.AwayTeam==club1))]
     if df.empty:
