@@ -6,6 +6,8 @@ This repo presents the code for an app of datavisualisation of football Data usi
 
 The data are gathered on [this site](https://www.football-data.co.uk/). It provides extensive access to match history in major (and alos minor, but I have not considered them) european football leagues, such as Premier League (England), Bundesliga (Germany), Ligue 1 (France), Liga (Spain) and Serie A (Italy). 
 
+Data goes from the season 2005/2006 to the ongoing season (2020/2021). 
+
 This histories are updated frequently. 
 
 The app was created using Dash and Dash bootstrap component for the css styles and components. It has be hosted on Heroku.
